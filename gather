@@ -1,0 +1,16 @@
+#!/bin/sh
+
+mkdir --parents home/.config/{i3,i3status,nvim} home/.bin home/aur
+
+cp ~/.bashrc ~/.bash_profile ~/.profile ~/.xsession ~/.Xresources ~/.xinitrc home/
+cp ~/.bin/myi3status ~/.bin/fixscreen home/.bin/
+cp ~/.config/i3/config home/.config/i3/
+cp ~/.config/i3status/config home/.config/i3status/
+cp ~/.config/nvim/init.vim home/.config/nvim/
+cp ~/aur/upgrade home/aur/
+cp ~/.gitconfig home/
+
+mkdir --parents etc/X11/xorg.conf.d
+
+cp /etc/X11/xorg.conf.d/00-keyboard.conf /etc/X11/xorg.conf.d/55-synaptics-u430.conf etc/X11/xorg.conf.d/
+

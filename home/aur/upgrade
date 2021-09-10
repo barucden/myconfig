@@ -1,0 +1,27 @@
+#!/bin/sh
+
+is_up_to_date() {
+    git remote update > /dev/null && git status -uno | grep -c "is up to date"
+}
+
+git status > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+    echo "Not a git repository!"
+    exit 1
+fi
+
+if is_up_to_date; then
+    echo "Package is up to date!"
+    exit 0
+else
+    echo "Pulling changes..."
+    git pull --quiet
+
+    if [ $? -ne 0 ]; then
+        echo "Pull failed!"
+        exit 2
+    fi
+
+    echo "Building & installing..."
+    makepkg --syncdeps --rmdeps --clean --install
+fi

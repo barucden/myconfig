@@ -1,0 +1,14 @@
+#!/bin/sh
+
+function getlayout() {
+    xkblayout | head -c 3 | tr [A-Z] [a-z]
+}
+
+i3status | (read line && echo "$line" && read line && echo "$line"; while :
+do
+    read line
+    layout=`getlayout`
+    line=`echo $line | head -c-2`
+    echo ""
+    echo "$line, {\"full_text\": \"$layout\"}]"
+done)
