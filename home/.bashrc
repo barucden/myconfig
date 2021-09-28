@@ -85,6 +85,8 @@ fi
 
 alias vi='i3-msg --quiet resize set width 1100 px 2>/dev/null; nvim'
 alias l='ls --group-directories-first -lhv --color=auto'
+alias c='cd'
+alias qv='qpdfview'
 
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
