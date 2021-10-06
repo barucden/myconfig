@@ -59,6 +59,7 @@ autocmd FileType tex setlocal indentexpr=
 
 " Consider align/align* as a mathematical environment in tex files
 autocmd FileType tex call TexNewMathZone("K", "align", 1)
+autocmd FileType tex call TexNewMathZone("K", "gather", 1)
 
 " Keybindings
 
