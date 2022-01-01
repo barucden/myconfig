@@ -14,8 +14,8 @@ Plug 'lifepillar/vim-gruvbox8'
 call plug#end()
 
 " Colorscheme
-colorscheme gruvbox8_hard
 set termguicolors
+colorscheme gruvbox8_hard
 
 " Show line numbers
 set number
