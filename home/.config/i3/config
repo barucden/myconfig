@@ -116,9 +116,14 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 3%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # Play control
+# Previous
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 
+bindsym Control+Mod4+Left exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+# Next
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym Control+Mod4+Right exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+# Play
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause 
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -147,3 +152,4 @@ bar {
 exec light-locker --lock-on-lid
 exec owncloud
 exec redshift
+exec xrandr --dpi 96
