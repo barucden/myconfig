@@ -7,7 +7,7 @@ cp ~/.latexmkrc home/
 cp ~/.bin/myi3status ~/.bin/fixscr home/.bin/
 cp ~/.config/i3/config home/.config/i3/
 cp ~/.config/i3status/config home/.config/i3status/
-cp ~/.config/nvim/init.vim home/.config/nvim/
+cp ~/.config/nvim/init.lua home/.config/nvim/
 cp ~/aur/upgrade home/aur/
 cp ~/.gitconfig home/
 
