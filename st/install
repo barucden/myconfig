@@ -1,9 +1,12 @@
 #!/bin/sh
 
-git clone https://git.suckless.org/st
+git clone https://git.suckless.org/st && cd st
 
-make --directory=st clean st
-cp config.h st/config.h
+# Apply a patch to support scrolling
+curl -O https://st.suckless.org/patches/scrollback/st-scrollback-ringbuffer-0.8.5.diff
+git apply st-scrollback-ringbuffer-0.8.5.diff
 
-make --directory=st clean st && doas make --directory=st install
+make clean st && cp ../config.h config.h
+
+doas make install
 
