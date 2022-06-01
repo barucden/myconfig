@@ -4,3 +4,5 @@
 [alias]
 	a = add
 	s = status
+[init]
+	defaultBranch = main
