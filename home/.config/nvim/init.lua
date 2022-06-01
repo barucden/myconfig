@@ -46,6 +46,8 @@ vim.opt.expandtab = true
 vim.opt.ts = 4
 vim.opt.shiftwidth = 4
 
+vim.opt.foldenable = false
+
 -- Remove trailing spaces
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*' },
