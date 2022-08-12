@@ -8,7 +8,6 @@ Plug('lifepillar/vim-gruvbox8')
 Plug('nvim-treesitter/nvim-treesitter', {
     ['do'] = vim.fn[':TSInstall']
 })
-Plug('nvim-neorg/neorg'); Plug('nvim-lua/plenary.nvim')
 
 vim.call('plug#end')
 
@@ -68,7 +67,7 @@ vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
 
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'julia', 'python', 'norg' },
+    ensure_installed = { 'julia', 'python', 'cpp' },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -79,8 +78,6 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
-require('neorg').setup {
-    load = {
-        ['core.norg.concealer'] = {},
-    }
-}
+-- Get rid of annoying indentation in TeX files
+vim.cmd('au FileType tex setlocal indentexpr=')
+
