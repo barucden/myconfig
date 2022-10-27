@@ -4,7 +4,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 
 Plug('JuliaEditorSupport/julia-vim')
 Plug('junegunn/vim-easy-align')
-Plug('lifepillar/vim-gruvbox8')
+Plug('ellisonleao/gruvbox.nvim')
 Plug('nvim-treesitter/nvim-treesitter', {
     ['do'] = vim.fn[':TSInstall']
 })
@@ -13,7 +13,9 @@ vim.call('plug#end')
 
 -- Colorscheme
 vim.opt.termguicolors = true
-vim.cmd('colorscheme gruvbox8_hard')
+vim.opt.background = 'light'
+require("gruvbox").setup({ contrast = "hard" })
+vim.cmd("colorscheme gruvbox")
 
 -- Show line numbers
 vim.opt.number = true
@@ -67,7 +69,7 @@ vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
 
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'julia', 'python', 'cpp' },
+    ensure_installed = { 'julia', 'python', 'cpp', 'lua'},
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -76,6 +78,10 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
+
+    indent = {
+        enable = false
+    }
 }
 
 -- Get rid of annoying indentation in TeX files
