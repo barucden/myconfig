@@ -18,6 +18,12 @@ bindsym $mod+o exec light-locker-command --lock
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 
+# start file browser
+bindsym $mod+Escape exec pcmanfm
+
+# screenshot program
+bindsym $mod+Print exec flameshot gui
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
