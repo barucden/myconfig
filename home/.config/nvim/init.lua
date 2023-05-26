@@ -69,7 +69,7 @@ vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)')
 
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'julia', 'python', 'cpp', 'lua'},
+    ensure_installed = { 'julia', 'python', 'latex' },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -78,10 +78,6 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
-
-    indent = {
-        enable = false
-    }
 }
 
 -- Get rid of annoying indentation in TeX files
