@@ -3,3 +3,8 @@ import:
 
 font:
   size: 10
+
+key_bindings:
+  # spawn a new instance in the current working directory
+  - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+
