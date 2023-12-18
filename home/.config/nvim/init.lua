@@ -8,6 +8,7 @@ Plug('ellisonleao/gruvbox.nvim')
 Plug('nvim-treesitter/nvim-treesitter', {
     ['do'] = vim.fn[':TSInstall']
 })
+Plug('ggandor/leap.nvim')
 
 vim.call('plug#end')
 
@@ -78,7 +79,10 @@ require('nvim-treesitter.configs').setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
+
 }
+
+require('leap').add_default_mappings()
 
 -- Get rid of annoying indentation in TeX files
 vim.cmd('au FileType tex setlocal indentexpr=')

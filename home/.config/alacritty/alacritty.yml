@@ -7,4 +7,6 @@ font:
 key_bindings:
   # spawn a new instance in the current working directory
   - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
+  - { key: K,        mods: Control,       action: ScrollLineUp     }
+  - { key: J,        mods: Control,       action: ScrollLineDown   }
 

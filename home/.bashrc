@@ -61,15 +61,6 @@ fi
 # -R: show ANSI colors correctly; -i: case insensitive search
 LESS="-R -i"
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 if [ -f ~/.profile ]; then
     . ~/.profile
 fi
@@ -83,10 +74,13 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 # ----------------------------
 
-alias vi='i3-msg --quiet resize set width 1100 px 2>/dev/null; nvim'
+alias vi='nvim'
 alias l='ls --group-directories-first -lhv --color=auto'
 alias c='cd'
+alias ctmp='cd `mktemp -d`'
 alias qv='qpdfview'
+# alacritty not supported on remote servers
+alias ssh='TERM=xterm-256color ssh'
 
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
